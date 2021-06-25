@@ -1,10 +1,11 @@
-% Released by Prof. Sun Xiao (Institute of Affective Computing, School of Computer and Information, HFUT)
+% Released by Prof. SUN Xiao 
+% (Institute of Affective Computing, School of Computer and Information, Hefei University of Technology)
 % original url: https://github.com/sxhfut/Beamer-HFUT
 % There is no license for original theme, but "free distribution and use" was announced. 
 %
 \ProvidesPackage{beamerthemehfut}
 
-\RequirePackage{lastpage,graphicx,tikz,setspace}
+\RequirePackage{lastpage,graphicx,tikz}
 \RequirePackage{ctex}
 
 \usefonttheme{professionalfonts}
@@ -20,12 +21,12 @@
 \setbeamertemplate{title page}{
   \noindent\includegraphics[height=0.17\textheight]{images/HFUT_Horizontal_name&badge.pdf}
   \vskip4em
-  \begin{spacing}{1}
+  {
     \noindent
     {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf\inserttitle}
     \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
     {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\textbf\insertsubtitle}
-  \end{spacing}
+  }
   \vskip3em
   {\noindent\usebeamercolor[fg]{title}\insertauthor}
   \vskip0.2em
@@ -39,14 +40,14 @@
 \defbeamertemplate*{frametitle}{}[1][]
 {
   \vspace{20pt}
-  %\hspace{}
   {
-    \begin{spacing}{1}
-      {\color{blue} \fontsize{20}{30} \selectfont \noindent \insertframetitle}
-    \end{spacing}
-    \begin{spacing}{1}
-      {\color{blue} \fontsize{16}{30} \selectfont \noindent \insertframesubtitle}
-    \end{spacing}
+    {\color{blue} \fontsize{20}{30} \selectfont \noindent \insertframetitle}
+    \vspace{5pt}
+    
+    \ifx\insertframesubtitle\@empty
+    \else
+      {\color{blue} \fontsize{16}{20} \selectfont \noindent \insertframesubtitle}
+    \fi
   }
 }
 
