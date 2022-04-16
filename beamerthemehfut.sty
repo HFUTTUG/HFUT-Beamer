@@ -7,6 +7,7 @@
 
 \RequirePackage{lastpage,graphicx,tikz}
 \RequirePackage{ctex}
+\RequirePackage[absolute,overlay]{textpos}
 
 \usefonttheme{professionalfonts}
 \usefonttheme{structuresmallcapsserif}
@@ -37,7 +38,6 @@
 }
 
 % frame title
-\RequirePackage[absolute,overlay]{textpos}
 \defbeamertemplate*{frametitle}{}[1][]
 {
   \vspace{20pt}
@@ -76,7 +76,7 @@
 	\begin{beamercolorbox}{section in head/foot}
 		\insertsectionnavigationhorizontal{0.94\textwidth}{}{}
 	\end{beamercolorbox}
-} %\setbeamertemplate{headline}{ \insertnavigation{0.94\paperwidth}} %This includes subsection
+} %\setbeamertemplate{headline}{ \insertnavigation{0.94\paperwidth}} % This includes subsection
 \addtoheadtemplate{\pgfuseshading{beamer@headfade}\vskip-1cm}{}
 
 \setbeamertemplate{footline}{
@@ -91,5 +91,3 @@
     \fi
   \end{beamercolorbox}
 }
-
-\mode<all>

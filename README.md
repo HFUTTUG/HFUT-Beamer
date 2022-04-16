@@ -4,8 +4,9 @@
 
 | 主题名称             | 作者                            | 封面截图                                     | 内页截图                                     |
 | ---------------- | ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `CambridgeUS-hfut` | [nauta](https://github.com/nautaa) | ![CambridgeUS-hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/cambridgeUS-hfut-front.png) | ![cambridgeUS-hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/cambridgeUS-hfut-inner.png) |
-| `hfut`             | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-inner.png) |
+| `CambridgeUS-hfut` | [nauta](https://github.com/nautaa) | ![CambridgeUS-hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/CambridgeUS-hfut-front.png) | ![CambridgeUS-hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/CambridgeUS-hfut-inner.png) |
+| [`hfut`](https://github.com/sxhfut/Beamer-HFUT) | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-inner.png) |
+| [`hfut-BinChen`](https://github.com/HFUT-BinChen/HFUT-Beamer) | [陈彬](https://github.com/HFUT-BinChen) | ![hfut-BinChen-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-front.png) | ![hfut-BinChen-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-inner.png) |
 
 可以在`example.tex`中的`\usetheme{...}`中填入主题名进行调整主题的调整。默认采用16:9比例，可以删除`\documentclass[aspectratio=169]{beamer}`中的`[aspectratio=169]`切换回4:3比例。
 
