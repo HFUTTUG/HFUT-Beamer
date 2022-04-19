@@ -1,3 +1,8 @@
+% Released by Dr. Bin CHEN
+% (School of Computer and Information, Hefei University of Technology)
+% original url: https://github.com/HFUT-BinChen/HFUT-Beamer
+% Warning: There is no licence for original theme.
+%
 \ProvidesPackage{beamerthemehfut-BinChen}
 
 \RequirePackage{graphicx,tikz,pgfplots}
@@ -66,7 +71,32 @@
 
 % Title page
 \defbeamertemplate*{title page}{HFUT}[1][]{
-\vskip1.5cm%
+  \begin{tikzpicture}[remember picture,overlay] 
+    \begin{scope}[on background layer]
+      \node [anchor=west, inner sep=0pt] at ([xshift=-110pt, yshift=-11.9pt]current page.west){\includegraphics[height=0.805\paperheight]{images/HFUT_MainTeachingBuilding.jpg}};
+    \end{scope}
+    % white shape
+    \draw[fill=white,white]  ([xshift = 190pt, yshift=-35.5pt]current page.north west) -- ([xshift = 400pt, yshift=-35.5pt]current page.north west) -- ([xshift = 400pt, yshift=13.4pt]current page.south west) -- ([xshift =130pt, yshift=13.4pt]current page.south west) -- cycle;
+
+    % HFUT logo
+    \node [anchor=south west, inner sep=0pt] at ([xshift=20pt, yshift=-33pt]current page.north west){\includegraphics[height=1.1cm]{images/HFUT_Horizontal_name&badge.pdf}};
+
+    % College logo, now we do not use it
+    % \node [anchor=north east, inner sep=0pt]  at ([xshift = -0.3cm, yshift=-0.18cm]current page.north east){\includegraphics[height=0.9cm]{学院徽章.png}}; 
+
+    % top and bottom lines
+    \draw[HFUTred] ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=-35pt]current page.north east);
+    \draw[HFUTred] ([xshift = 0pt, yshift=13pt]current page.south west) -- ([xshift = 0pt, yshift=13pt]current page.south east);
+
+    % Red shape
+    %\draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 40pt, yshift=0pt]current page.south west) -- ([xshift = 114pt, yshift=-35pt]current page.north west) -- cycle;
+    
+    %\node [anchor=south west, inner sep=0pt] at ([xshift=-50pt, yshift=20pt]current page.south west){\includegraphics[height=7cm]{./HFUTTheme/hfut.jpeg}};
+
+    % slogan HFUT 
+    \node[anchor=west, inner sep=0pt, tuedarkblue, font=\scriptsize]  at ([xshift = 20pt, yshift=6pt]current page.south west){{\textbf{厚德、笃学、崇实、尚新 }}};
+  \end{tikzpicture}
+  \vskip1.5cm%
   \begingroup
     \begin{columns}
       \column{0.4\paperwidth}% Create an empty row 
@@ -74,8 +104,9 @@
       \column{0.60\paperwidth}% in the second row put the title
 
     \begin{beamercolorbox}[wd=0.6\paperwidth,center, sep=10pt,#1]{title page header}
-	  \usebeamerfont{title}\inserttitle\par%
-	\end{beamercolorbox}%
+	    \usebeamerfont{title}\inserttitle\par%
+      \usebeamerfont{subtitle}\insertsubtitle
+	  \end{beamercolorbox}%
     \vskip0.5cm%
     \begin{beamercolorbox}[wd=0.6\paperwidth,center, #1]{author}
       \usebeamerfont{author}\insertauthor%
@@ -91,41 +122,28 @@
     
     \end{columns}
   \endgroup
-  \vfill    
-  \begin{tikzpicture}[remember picture,overlay] 
-    \begin{scope}[on background layer]
-      \node [anchor=west, inner sep=0pt] at ([xshift=-110pt, yshift=-11.9pt]current page.west){\includegraphics[height=0.805\paperheight]{images/HFUT_MainTeachingBuilding.jpg}};
-    \end{scope}
-    % HFUT logo
-	\node [anchor=south west, inner sep=0pt] at ([xshift=20pt, yshift=-33pt]current page.north west){\includegraphics[height=1.1cm]{images/HFUT_Horizontal_name&badge.pdf}};
-	% College logo, now we do not use it
-	% \node [anchor=north east, inner sep=0pt]  at ([xshift = -0.3cm, yshift=-0.18cm]current page.north east){\includegraphics[height=0.9cm]{学院徽章.png}}; 
-	% top and bottom lines
-	\draw[HFUTred] ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=-35pt]current page.north east);
-	\draw[HFUTred] ([xshift = 0pt, yshift=13pt]current page.south west) -- ([xshift = 0pt, yshift=13pt]current page.south east);
-	% Red shape
-	%\draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 40pt, yshift=0pt]current page.south west) -- ([xshift = 114pt, yshift=-35pt]current page.north west) -- cycle;
-    % white shape
-	\draw[fill=white,white]  ([xshift = 190pt, yshift=-35.5pt]current page.north west) -- ([xshift = 202.5pt, yshift=-35.5pt]current page.north west) -- ([xshift = 202.5pt, yshift=13.4pt]current page.south west) -- ([xshift =130pt, yshift=13.4pt]current page.south west) -- cycle;
-    %\node [anchor=south west, inner sep=0pt] at ([xshift=-50pt, yshift=20pt]current page.south west){\includegraphics[height=7cm]{./HFUTTheme/hfut.jpeg}};
-	% slogan HFUT 
-	\node[anchor=west, inner sep=0pt, tuedarkblue, font=\scriptsize]  at ([xshift = 20pt, yshift=6pt]current page.south west){{\textbf{厚德、笃学、崇实、尚新 }}};
-  \end{tikzpicture}
+  \vfill
 }
 
 \defbeamertemplate*{frametitle}{HFUT}[1][]
 {
   \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle} 
     \begin{tikzpicture}[remember picture,overlay]
-      % college logo, now we do not use it.
+
       \fill[color=white] (0,0.2) rectangle (current page.north east);
+
+      % college logo, now we do not use it.
       %\node [anchor=north east, inner sep=0pt]  at ([xshift = -0.15cm, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{学院徽章.png}}; 
+
       % HFUT logo
       \node [anchor=north west, inner sep=0pt]  at ([xshift = 10pt, yshift=-1pt]current page.north west){\includegraphics[height=.7cm]{images/HFUT_Horizontal_name&badge.pdf}}; 
+
       % top line
       \draw[tueScharlaken] ([xshift = 0pt, yshift=-22pt]current page.north west) -- ([xshift = 0pt, yshift=-22pt]current page.north east);
+
       % bottom line and shape for page number
       \draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 20pt, yshift=0pt]current page.south west) -- ([xshift = 25pt, yshift=15pt]current page.south west) -- ([xshift = 0pt, yshift=15pt]current page.south west) -- cycle;
+
       % frame title
       \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\Large]  at ([xshift = 10pt, yshift=-28pt]current page.north west){\insertframetitle};
       \ifx\insertframesubtitle\@empty
@@ -133,8 +151,10 @@
         \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\large]  at ([xshift = 10pt, yshift=-48pt]current page.north west){\insertframesubtitle};
       \fi
       \node [anchor=south, inner sep=0pt,white, font=\scriptsize]  at ([xshift = 11pt, yshift=3pt]current page.south west){{\insertframenumber/\inserttotalframenumber}};
-      \node [anchor=west, inner sep=0pt,black,  font=\scriptsize]  at ([xshift = 160pt, yshift=8pt]current page.south west){{\insertshortauthor}};
+      \node [anchor=west, inner sep=0pt, black, font=\scriptsize\color{black}]  at ([xshift = 30pt, yshift=8pt]current page.south west){{\insertshorttitle}};
+      \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = 160pt, yshift=8pt]current page.south west){{\insertshortauthor}};
       \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = -80pt, yshift=8pt]current page.south east){{\insertshortdate}};
+
     \end{tikzpicture}
   \end{beamercolorbox}
 }
