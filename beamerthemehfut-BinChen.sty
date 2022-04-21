@@ -6,13 +6,13 @@
 \ProvidesPackage{beamerthemehfut-BinChen}
 
 \RequirePackage{graphicx,tikz,pgfplots}
-\RequirePackage{ctex}
+\RequirePackage{ctex,hyperref}
 
 \pgfplotsset{compat=newest}
 \usetikzlibrary{pgfplots.groupplots}
 \usetikzlibrary{positioning,shadows,shapes,fit,arrows,backgrounds}
 \usetikzlibrary{backgrounds,calc}
-\hypersetup{colorlinks=true,urlcolor=cyan}
+\hypersetup{colorlinks,linkcolor=black,urlcolor=cyan}
 
 \definecolor{HFUTred}{HTML}{a8000c} % main color!
 \definecolor{tuered}{HTML}{FF0000}
@@ -70,7 +70,7 @@
 }
 
 % Title page
-\defbeamertemplate*{title page}{HFUT}[1][]{
+\defbeamertemplate*{title page}{hfut-BinChen}[1][]{
   \begin{tikzpicture}[remember picture,overlay] 
     \begin{scope}[on background layer]
       \node [anchor=west, inner sep=0pt] at ([xshift=-110pt, yshift=-11.9pt]current page.west){\includegraphics[height=0.805\paperheight]{images/HFUT_MainTeachingBuilding.jpg}};
@@ -125,24 +125,25 @@
   \vfill
 }
 
-\defbeamertemplate*{frametitle}{HFUT}[1][]
+\makeatletter
+\def\ps@navigation@titlepage{%
+  \setbeamertemplate{footline}{}% no footline for the titlepage 
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+
+\defbeamertemplate*{frametitle}{hfut-BinChen}
 {
-  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle} 
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle}
     \begin{tikzpicture}[remember picture,overlay]
-
-      \fill[color=white] (0,0.2) rectangle (current page.north east);
-
+      %\fill[color=white] (0,0.2) rectangle (current page.north east);
       % college logo, now we do not use it.
       %\node [anchor=north east, inner sep=0pt]  at ([xshift = -0.15cm, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{学院徽章.png}}; 
-
       % HFUT logo
       \node [anchor=north west, inner sep=0pt]  at ([xshift = 10pt, yshift=-1pt]current page.north west){\includegraphics[height=.7cm]{images/HFUT_Horizontal_name&badge.pdf}}; 
 
       % top line
       \draw[tueScharlaken] ([xshift = 0pt, yshift=-22pt]current page.north west) -- ([xshift = 0pt, yshift=-22pt]current page.north east);
-
-      % bottom line and shape for page number
-      \draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 20pt, yshift=0pt]current page.south west) -- ([xshift = 25pt, yshift=15pt]current page.south west) -- ([xshift = 0pt, yshift=15pt]current page.south west) -- cycle;
 
       % frame title
       \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\Large]  at ([xshift = 10pt, yshift=-28pt]current page.north west){\insertframetitle};
@@ -150,11 +151,21 @@
       \else
         \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\large]  at ([xshift = 10pt, yshift=-48pt]current page.north west){\insertframesubtitle};
       \fi
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{hfut-BinChen}
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{palette primary} 
+    \begin{tikzpicture}[remember picture,overlay]
+      % bottom line and shape for page number
+      \draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 20pt, yshift=0pt]current page.south west) -- ([xshift = 25pt, yshift=15pt]current page.south west) -- ([xshift = 0pt, yshift=15pt]current page.south west) -- cycle;
+
       \node [anchor=south, inner sep=0pt,white, font=\scriptsize]  at ([xshift = 11pt, yshift=3pt]current page.south west){{\insertframenumber/\inserttotalframenumber}};
       \node [anchor=west, inner sep=0pt, black, font=\scriptsize\color{black}]  at ([xshift = 30pt, yshift=8pt]current page.south west){{\insertshorttitle}};
       \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = 160pt, yshift=8pt]current page.south west){{\insertshortauthor}};
       \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = -80pt, yshift=8pt]current page.south east){{\insertshortdate}};
-
     \end{tikzpicture}
   \end{beamercolorbox}
 }
