@@ -140,16 +140,16 @@
       % college logo, now we do not use it.
       %\node [anchor=north east, inner sep=0pt]  at ([xshift = -0.15cm, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{学院徽章.png}}; 
       % HFUT logo
-      \node [anchor=north west, inner sep=0pt]  at ([xshift = 10pt, yshift=-1pt]current page.north west){\includegraphics[height=.7cm]{images/HFUT_Horizontal_name&badge.pdf}}; 
+      \node [anchor=north east, inner sep=0pt]  at ([xshift = -10pt, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{images/HFUT_Horizontal_name&badge.pdf}}; 
 
       % top line
       \draw[tueScharlaken] ([xshift = 0pt, yshift=-22pt]current page.north west) -- ([xshift = 0pt, yshift=-22pt]current page.north east);
 
       % frame title
-      \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\Large]  at ([xshift = 10pt, yshift=-28pt]current page.north west){\insertframetitle};
+      \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\Large]  at ([xshift = 10pt, yshift=-5pt]current page.north west){\insertframetitle};
       \ifx\insertframesubtitle\@empty
       \else
-        \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\large]  at ([xshift = 10pt, yshift=-48pt]current page.north west){\insertframesubtitle};
+        \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\large]  at ([xshift = 10pt, yshift=-25pt]current page.north west){\insertframesubtitle};
       \fi
     \end{tikzpicture}
   \end{beamercolorbox}

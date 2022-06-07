@@ -5,7 +5,6 @@
 \usetheme{hfut-sx}
 
 \usepackage{amsmath,amsfonts,amssymb}
-\usepackage{blindtext}
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{layout}
@@ -158,14 +157,37 @@ The set of natural numbers is infinite.
 
 \section{动画}
 
-\begin{frame}{简单动画}
+\begin{frame}[fragile]{简单动画}
 	\Beamer{}比较方便的是实现一些简单的动画效果。
-	
+
 	比方说：
 	\begin{itemize}
-		\item 单击显示/隐藏
-  		\item 单击变色
+		\pause
+		\item 单击显示/隐藏：\mintinline{tex}{\pause}命令
+		\pause
+  		\item \alert<4>{单击变色}：\mintinline{tex}{\alert}命令
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{简单动画}
+	同样的事情也可以用\mintinline{tex}{\uncover}命令做到
+
+\begin{semiverbatim}
+\uncover<1->{\alert<0>{int main (void)}}
+\uncover<1->{\alert<0>{\{}}
+\uncover<1->{\alert<1>{  \alert<4>{std::}vector<bool> is_prime (100, true);}}
+\uncover<1->{\alert<1>{  for (int i = 2; i < 100; i++)}}
+\uncover<2->{\alert<2>{  if (is_prime[i])}}
+\uncover<2->{\alert<0>{  \{}}
+\uncover<3->{\alert<3>{    \alert<4>{std::}cout << i << " ";}}
+\uncover<3->{\alert<3>{    for (int j = i; j < 100;}}
+\uncover<3->{\alert<3>{      is_prime [j] = false, j+=i);}}
+\uncover<2->{\alert<0>{  \}}}
+\uncover<1->{\alert<0>{  return 0;}}
+\uncover<1->{\alert<0>{\}}}
+\end{semiverbatim}
+\visible<4->{Note the use of \alert{\texttt{std::}}.}
+
 \end{frame}
 
 \section{引用}
@@ -187,7 +209,10 @@ The set of natural numbers is infinite.
 		\item \texttt{verbatim}环境
 		\item \texttt{lstlisting}环境
   		\item \texttt{minted}环境
+    	\item ……
 	\end{itemize}
+
+	怎么判断呢？一般来说，需要在编译时加入\texttt{-shell-escape}的命令或者环境就很可能需要添加\texttt{[fragile]}选项。
 \end{frame}
 
 \begin{frame}{打印参考文献列表需要特殊处理}
@@ -204,8 +229,12 @@ The set of natural numbers is infinite.
 }
 \end{frame}
 
-\begin{frame}
-	欢迎进行贡献和加入我们！
+\begin{frame}{HFUTTUG需要你！}
+	\centering
+
+	我们在：\url{https://github.com/HFUTTUG}，欢迎进行贡献！
+
+	向\href{mailto:hfuttug@163.com}{hfuttug@163.com}发邮件以加入我们
 \end{frame}
 
 \end{document}
