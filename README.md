@@ -4,9 +4,9 @@
 
 | 主题名称             | 作者                            | 封面截图                                     | 内页截图                                     |
 | ---------------- | ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `hfut-CambridgeUS` | [nauta](https://github.com/nautaa) | ![CambridgeUS-hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/CambridgeUS-hfut-front.png) | ![CambridgeUS-hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/CambridgeUS-hfut-inner.png) |
-| [`hfut-sx`](https://github.com/sxhfut/Beamer-HFUT) | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-inner.png) |
-| [`hfut-BinChen`](https://github.com/HFUT-BinChen/HFUT-Beamer) | [陈斌](https://github.com/HFUT-BinChen) | ![hfut-BinChen-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-front.png) | ![hfut-BinChen-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-inner.png) |
+| `hfut-CambridgeUS` | [nauta](https://github.com/nautaa) | ![hfut-CambridgeUS-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-CambridgeUS-front.png) | ![hfut-CambridgeUS-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-CambridgeUS-inner.png) |
+| [`hfut-sx`](https://github.com/sxhfut/Beamer-HFUT) | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-sx-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-sx-inner.png) |
+| [`hfut-BinChen`](https://github.com/HFUT-BinChen/HFUT-Beamer) | [陈斌](https://github.com/HFUT-BinChen) | ![hfut-BinChen-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-BinChen-front.png) | ![hfut-BinChen-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/ci_out/hfut-BinChen-inner.png) |
 
 我们建议在你使用模板前，先看看`example.tex`提供的样例指导。这样遇到一些问题也比较好寻找解决方案。
 
