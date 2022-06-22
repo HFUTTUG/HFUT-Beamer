@@ -4,11 +4,11 @@
 
 本项目是在前人的基础上编写的展示用 Beamer 主题集合。目前提供以下几种主题：
 
-| 主题名称             | 作者                            | 封面截图                                     | 内页截图                                     |
-| ---------------- | ---------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `hfut-CambridgeUS` | [nauta](https://github.com/nautaa) | ![hfut-CambridgeUS-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-CambridgeUS-front.png) | ![hfut-CambridgeUS-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-CambridgeUS-inner.png) |
-| [`hfut-sx`](https://github.com/sxhfut/Beamer-HFUT) | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-inner.png) |
-| [`hfut-BinChen`](https://github.com/HFUT-BinChen/HFUT-Beamer) | [陈斌](https://github.com/HFUT-BinChen) | ![hfut-BinChen-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-front.png) | ![hfut-BinChen-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-inner.png) |
+| 主题名称             | 作者                            | 封面截图                                     | 内页截图                                     | PDF                          |
+| ---------------- | ---------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| `hfut-CambridgeUS` | [nauta](https://github.com/nautaa) | ![hfut-CambridgeUS-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-CambridgeUS-front.png) | ![hfut-CambridgeUS-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-CambridgeUS-inner.png) | [🔗](https://github.com/HFUTTUG/HFUT-Beamer/raw/images/hfut-CambridgeUS.pdf) |
+| [`hfut-sx`](https://github.com/sxhfut/Beamer-HFUT) | [孙晓](https://github.com/sxhfut/)   | ![hfut-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-front.png) | ![hfut-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-sx-inner.png) | [🔗](https://github.com/HFUTTUG/HFUT-Beamer/raw/images/hfut-sx.pdf) |
+| [`hfut-BinChen`](https://github.com/HFUT-BinChen/HFUT-Beamer) | [陈斌](https://github.com/HFUT-BinChen) | ![hfut-BinChen-front](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-front.png) | ![hfut-BinChen-inner](https://github.com/HFUTTUG/HFUT-Beamer/blob/images/hfut-BinChen-inner.png) | [🔗](https://github.com/HFUTTUG/HFUT-Beamer/raw/images/hfut-BinChen.pdf) |
 
 我们建议在你使用模板前，先看看`example.tex`提供的样例指导。这样遇到一些问题也比较好寻找解决方案。
 
