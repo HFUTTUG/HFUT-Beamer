@@ -12,7 +12,7 @@ jobs:
           sudo apt install imagemagick ghostscript
           sudo rm /etc/ImageMagick-*/policy.xml
       - name: Change theme to hfut-CambridgeUS
-        run: cat example.tex | sed "s/hfut-sx/hfut-CambridgeUS/g" > hfut-CambridgeUS.tex
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-CambridgeUS}/g' > hfut-CambridgeUS.tex
       - name: Compile example for theme hfut-CambridgeUS
         uses: xu-cheng/latex-action@v2
         with:
@@ -24,7 +24,7 @@ jobs:
           convert -density 300 "hfut-CambridgeUS.pdf[0]" "hfut-CambridgeUS-front.png"
           convert -density 300 "hfut-CambridgeUS.pdf[3]" "hfut-CambridgeUS-inner.png"
       - name: Change theme to hfut-sx
-        run: cp example.tex hfut-sx.tex
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-sx}/g' > hfut-sx.tex
       - name: Compile example for theme hfut-sx 
         uses: xu-cheng/latex-action@v2
         with:
@@ -36,7 +36,7 @@ jobs:
           convert -density 300 "hfut-sx.pdf[0]" "hfut-sx-front.png"
           convert -density 300 "hfut-sx.pdf[3]" "hfut-sx-inner.png"
       - name: Change theme to hfut-BinChen
-        run: cat example.tex | sed "s/hfut-sx/hfut-BinChen/g" > hfut-BinChen.tex
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-BinChen}/g' > hfut-BinChen.tex
       - name: Compile example for theme hfut-BinChen
         uses: xu-cheng/latex-action@v2
         with:
