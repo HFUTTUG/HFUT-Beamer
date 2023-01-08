@@ -65,6 +65,7 @@ EnableTeXEnhancements = true
 ```
 
 Don't forget to reset the paths according to your installation.    [Click Here for More Details](https://github.com/James-Yu/LaTeX-Workshop/wiki)
+
 =======
 # 合肥工业大学 Beamer 主题集合
 
