@@ -2,6 +2,7 @@
 % !TEX encoding = UTF-8
 
 \documentclass[aspectratio=169]{beamer}
+% 默认使用hfut-sx主题，可以自由更换
 \usetheme{hfut-sx}
 
 \usepackage{amsmath,amsfonts,amssymb}
@@ -10,10 +11,14 @@
 \usepackage{layout}
 \usepackage{minted}
 \usepackage[natbib=true]{biblatex}
+
+% biblatex 数据库
 \addbibresource{example.bib}
 
+% 幻灯片分页时从第二页开始打印“（续）”
 \setbeamertemplate{frametitle continuation}[from second]
 
+% 每一节开始的时候打印目录
 \AtBeginSection[]
 {
   \begin{frame}{目录}
@@ -191,7 +196,7 @@ The set of natural numbers is infinite.
 		\pause
 		\item 单击显示/隐藏：\mintinline{tex}{\pause}命令
 		\pause
-  		\item \alert<4>{单击变色}：\mintinline{tex}{\alert}命令
+		\item \alert<4>{单击变色}：\mintinline{tex}{\alert}命令
 	\end{itemize}
 \end{frame}
 
@@ -234,8 +239,8 @@ The set of natural numbers is infinite.
 	\begin{itemize}
 		\item \texttt{verbatim}环境
 		\item \texttt{lstlisting}环境
-  		\item \texttt{minted}环境
-    	\item ……
+		\item \texttt{minted}环境
+		\item ……
 	\end{itemize}
 
 	怎么判断呢？一般来说，需要在编译时加入\texttt{-shell-escape}的命令或者环境就很可能需要添加\texttt{[fragile]}选项。

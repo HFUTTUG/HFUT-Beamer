@@ -23,7 +23,9 @@
 
 ## 编译指南
 
-我们可以用`latexmk -xelatex -shell-escape example`命令编译示例文档。当然使用vscode也可以直接编译，我们也提供了针对LaTeX Workshop扩展的配置文件。
+我们可以用`latexmk -xelatex -shell-escape example`命令编译示例文档。当然使用vscode也可以直接编译，我们也提供了针对LaTeX Workshop扩展的[配置文件](https://github.com/HFUTTUG/HFUT-Beamer/blob/master/.vscode/settings.json)。
+
+> 注意：我们在样例文件中使用了`minted`宏包，这个宏包需要在编译时附上`-shell-escape`选项，并且需要安装Python和[Pygments](https://pygments.org/)。如果你不需要在你的文档中打印代码，或是希望使用`listings`宏包，那么请移除在示例文档中所有用到`minted`宏包的部分（`mintinline`命令，或者是`minted`环境）。
 
 ## 更多资料
 
@@ -33,7 +35,9 @@
 
 ## 写在后面
 
+- 鸣谢上面引用的3个项目，没有它们就没有我们这个合集。
 - 有意加入[@HFUTTUG](https://github.com/HFUTTUG)的同学可发送[📧Email](mailto:hfuttug@163.com)
+- 编译错误？请在这里新建一个issue。或者欢迎加入我们的QQ群（904943223）进行讨论。
 
 ## TODO
 - hfut-beamer-setup.tex/.sty：考虑到每个人的beamer设置习惯不一样（有无导航符号等），需要提供一个setup文件方便进行设置
