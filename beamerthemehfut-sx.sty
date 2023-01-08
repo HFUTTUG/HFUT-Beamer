@@ -1,0 +1,93 @@
+% Released by Prof. SUN Xiao 
+% (Institute of Affective Computing, School of Computer and Information, Hefei University of Technology)
+% original url: https://github.com/sxhfut/Beamer-HFUT
+% There is no licence for original theme, but "free distribution and use" was announced. 
+%
+\ProvidesPackage{beamerthemehfut-sx}
+
+\RequirePackage{lastpage,graphicx,tikz}
+\RequirePackage{ctex}
+\RequirePackage[absolute,overlay]{textpos}
+
+\usefonttheme{professionalfonts}
+\usefonttheme{structuresmallcapsserif}
+\usefonttheme{serif}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\definecolor{blue}{RGB}{31,91,166}
+\usecolortheme[RGB={31,91,166}]{structure}
+\hypersetup{colorlinks,linkcolor=,urlcolor=blue}
+
+% Titlepage
+\setbeamertemplate{title page}{
+  \noindent\includegraphics[height=0.17\textheight]{images/HFUT_Horizontal_name&badge.pdf}
+  \vskip4em
+  {
+    \noindent
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf\inserttitle}
+    \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\textbf\insertsubtitle}
+  }
+  \vskip3em
+  {\noindent\usebeamercolor[fg]{title}\insertauthor}
+  \vskip0.2em
+  \noindent\insertinstitute
+  \vskip0.2em
+  \noindent\insertdate
+}
+
+% frame title
+\defbeamertemplate*{frametitle}{}[1][]
+{
+  \vspace{20pt}
+  {
+    {\color{blue} \fontsize{20}{30} \selectfont \noindent \insertframetitle}
+    \vspace{5pt}
+    
+    \ifx\insertframesubtitle\@empty
+    \else
+      {\color{blue} \fontsize{16}{20} \selectfont \noindent \insertframesubtitle}
+    \fi
+  }
+}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \path (0,0) -- (\paperwidth,\paperheight);
+    \node [opacity=0.025] at (0.8\paperwidth,0.25\paperheight) {\includegraphics[width=11cm]{images/HFUT_badge.png}};
+  \end{tikzpicture}
+}
+%% Set page margins
+%\setbeamersize{text margin left=15pt}
+%\setbeamersize{text margin right=15pt}
+%\oddsidemargin=-45pt 
+%\textwidth=330pt
+
+%% Remove vertical shading in headline
+\AtBeginDocument {
+	{\usebeamercolor{section in head/foot}}
+	\pgfdeclareverticalshading{beamer@headfade}{\paperwidth}
+	{color(0cm)=(section in head/foot.bg);
+		color(1.25cm)=(section in head/foot.bg)}
+}
+%% Set beamer headline
+\setbeamertemplate{headline}{
+	\begin{beamercolorbox}{section in head/foot}
+		\insertsectionnavigationhorizontal{0.94\textwidth}{}{}
+	\end{beamercolorbox}
+} %\setbeamertemplate{headline}{ \insertnavigation{0.94\paperwidth}} % This includes subsection
+\addtoheadtemplate{\pgfuseshading{beamer@headfade}\vskip-1cm}{}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=3em,dp=1em,left]{}
+    \hspace{1em}
+    \insertframenumber\hspace{0.2em}/\hspace{0.2em}\inserttotalframenumber
+    \ifnum\thepage>1
+      \hspace{1em}
+      {\usebeamercolor[fg]{title}\insertshorttitle}
+      \hspace{1em}
+      \insertshortauthor
+    \fi
+  \end{beamercolorbox}
+}

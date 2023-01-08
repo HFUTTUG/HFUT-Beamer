@@ -1,0 +1,43 @@
+% original author: nauta
+\ProvidesPackage{beamerthemehfut-CambridgeUS}
+
+\RequirePackage{lastpage,graphicx,tikz}
+\RequirePackage{ctex}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usetheme{CambridgeUS}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{caption}[numbered]
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=blue}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \path (0,0) -- (\paperwidth,\paperheight);
+    \node [opacity=0.15] at (0.95\paperwidth,0.25\paperheight) {\includegraphics[width=11cm]{images/HFUT_badge.png}};
+  \end{tikzpicture}
+}
+
+\lstset{ 
+	frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	framerule=1pt,
+	rulecolor=\color{gray!35},
+	backgroundcolor=\color{gray!5},
+	basicstyle={\ttfamily},
+	numberstyle=\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=4,
+}

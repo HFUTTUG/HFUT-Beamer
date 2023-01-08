@@ -1,0 +1,74 @@
+name: make images and pdf
+on: [push, pull_request]
+jobs:
+  ubuntu-build-test:
+    name: Build Test(Ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Git repository
+        uses: actions/checkout@v3
+      - name: Setup ImageMagick
+        run: |
+          sudo apt install imagemagick ghostscript
+          sudo rm /etc/ImageMagick-*/policy.xml
+      - name: Change theme to hfut-CambridgeUS
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-CambridgeUS}/g' > hfut-CambridgeUS.tex
+      - name: Compile example for theme hfut-CambridgeUS
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "hfut-CambridgeUS.tex"
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+      - name: Generate image for theme hfut-CambridgeUS
+        run: |
+          convert -density 300 "hfut-CambridgeUS.pdf[0]" "hfut-CambridgeUS-front.png"
+          convert -density 300 "hfut-CambridgeUS.pdf[3]" "hfut-CambridgeUS-inner.png"
+      - name: Change theme to hfut-sx
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-sx}/g' > hfut-sx.tex
+      - name: Compile example for theme hfut-sx 
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "hfut-sx.tex"
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+      - name: Generate image for theme hfut-sx
+        run: | 
+          convert -density 300 "hfut-sx.pdf[0]" "hfut-sx-front.png"
+          convert -density 300 "hfut-sx.pdf[3]" "hfut-sx-inner.png"
+      - name: Change theme to hfut-BinChen
+        run: cat example.tex | sed 's/^\\usetheme{[^}]*}$/\\usetheme{hfut-BinChen}/g' > hfut-BinChen.tex
+      - name: Compile example for theme hfut-BinChen
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: "hfut-BinChen.tex"
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+      - name: Generate image for theme hfut-BinChen
+        run: |
+          convert -density 300 "hfut-BinChen.pdf[0]" "hfut-BinChen-front.png"
+          convert -density 300 "hfut-BinChen.pdf[3]" "hfut-BinChen-inner.png"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ci_out_ubuntu
+          path: |
+            hfut-*.png
+            hfut-*.pdf
+  post-output:
+    name: Post All Output to HFUTTUG/HFUT-Beamer
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.repository == 'HFUTTUG/HFUT-Beamer'
+    needs: [ubuntu-build-test]
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ci_out_ubuntu
+          path: ci_out
+      - name: Release to images
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.CI_DEPLOY }}
+          publish_branch: images
+          publish_dir: ci_out
+          force_orphan: true

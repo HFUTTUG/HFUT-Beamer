@@ -1,0 +1,174 @@
+% Released by Dr. Bin CHEN
+% (School of Computer and Information, Hefei University of Technology)
+% original url: https://github.com/HFUT-BinChen/HFUT-Beamer
+% Warning: There is no licence for original theme.
+%
+\ProvidesPackage{beamerthemehfut-BinChen}
+
+\RequirePackage{graphicx,tikz,pgfplots}
+\RequirePackage{ctex,hyperref}
+
+\pgfplotsset{compat=newest}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{positioning,shadows,shapes,fit,arrows,backgrounds}
+\usetikzlibrary{backgrounds,calc}
+\hypersetup{colorlinks,linkcolor=black,urlcolor=cyan}
+
+\definecolor{HFUTred}{HTML}{a8000c} % main color!
+\definecolor{tuered}{HTML}{FF0000}
+\definecolor{tueScharlaken}{HTML}{C81919} 
+\definecolor{tuedarkblue}{HTML}{000000}
+\definecolor{tueblue}{HTML}{101073}
+\definecolor{tuepink}{HTML}{D6004A}
+\definecolor{darkgreen}{rgb}{0,0.65,0}
+
+\setbeamercolor*{title page header}{fg=HFUTred}
+\setbeamercolor*{author}{fg=black}
+\setbeamercolor*{date}{fg=black}
+% to make blocks more colorful look
+\setbeamercolor{block title}{use=structure,fg=white,bg=HFUTred}
+\setbeamercolor{block body}{use=structure,fg=black,bg=HFUTred!5}
+\setbeamercolor{block title alerted}{use=structure,fg=white,bg=tueblue}
+\setbeamercolor{block body alerted}{use=structure,fg=black,bg=tueblue!5}
+\setbeamercolor{block title example}{use=structure,fg=white,bg=tuedarkblue}
+\setbeamercolor{block body example}{use=structure,fg=black,bg=tuedarkblue!5}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+% change color for itemize
+\setbeamercolor{itemize item}{fg=HFUTred} 
+\setbeamercolor{itemize subitem}{fg=HFUTred}
+\setbeamertemplate{itemize items}{\color{black}$\bullet$}
+
+% Set some lengths
+\setbeamersize{text margin left=20pt,text margin right=20pt}
+\setbeamertemplate{itemize items}[square]
+\setbeamerfont{page number in head/foot}{size=\scriptsize}
+\setbeamertemplate{footline}[myframe number]
+\setbeamerfont{page number in head/foot}{size=\tiny} % Make the slide numbers smaller
+
+% Set some colors and fonts
+\setbeamercolor{alerted text}{fg=HFUTred}
+\setbeamerfont{alerted text}{}
+
+% This is to put a box around every slide. Useful for printouts
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \draw [line width=0.05mm]
+    ($ (current page.north west) + (0.0cm,-0.0cm) $)
+    rectangle
+    ($ (current page.south east) + (-0.0cm,0.0cm) $);
+  \end{tikzpicture}%
+}
+% background
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fill[color=white] (0,7) rectangle (\the\paperwidth,\the\paperheight);
+    \ifnum\thepage>1\relax%
+      \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{hfut-BinChen}[1][]{
+  \begin{tikzpicture}[remember picture,overlay] 
+    \begin{scope}[on background layer]
+      \node [anchor=west, inner sep=0pt] at ([xshift=-110pt, yshift=-11.9pt]current page.west){\includegraphics[height=0.805\paperheight]{images/HFUT_MainTeachingBuilding.jpg}};
+    \end{scope}
+    % white shape
+    \draw[fill=white,white]  ([xshift = 190pt, yshift=-35.5pt]current page.north west) -- ([xshift = 400pt, yshift=-35.5pt]current page.north west) -- ([xshift = 400pt, yshift=13.4pt]current page.south west) -- ([xshift =130pt, yshift=13.4pt]current page.south west) -- cycle;
+
+    % HFUT logo
+    \node [anchor=south west, inner sep=0pt] at ([xshift=20pt, yshift=-33pt]current page.north west){\includegraphics[height=1.1cm]{images/HFUT_Horizontal_name&badge.pdf}};
+
+    % College logo, now we do not use it
+    % \node [anchor=north east, inner sep=0pt]  at ([xshift = -0.3cm, yshift=-0.18cm]current page.north east){\includegraphics[height=0.9cm]{学院徽章.png}}; 
+
+    % top and bottom lines
+    \draw[HFUTred] ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=-35pt]current page.north east);
+    \draw[HFUTred] ([xshift = 0pt, yshift=13pt]current page.south west) -- ([xshift = 0pt, yshift=13pt]current page.south east);
+
+    % Red shape
+    %\draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=-35pt]current page.north west) -- ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 40pt, yshift=0pt]current page.south west) -- ([xshift = 114pt, yshift=-35pt]current page.north west) -- cycle;
+    
+    %\node [anchor=south west, inner sep=0pt] at ([xshift=-50pt, yshift=20pt]current page.south west){\includegraphics[height=7cm]{./HFUTTheme/hfut.jpeg}};
+
+    % slogan HFUT 
+    \node[anchor=west, inner sep=0pt, tuedarkblue, font=\scriptsize]  at ([xshift = 20pt, yshift=6pt]current page.south west){{\textbf{厚德、笃学、崇实、尚新 }}};
+  \end{tikzpicture}
+  \vskip1.5cm%
+  \begingroup
+    \begin{columns}
+      \column{0.4\paperwidth}% Create an empty row 
+      \mbox{}
+      \column{0.60\paperwidth}% in the second row put the title
+
+    \begin{beamercolorbox}[wd=0.6\paperwidth,center, sep=10pt,#1]{title page header}
+	    \usebeamerfont{title}\inserttitle\par%
+      \usebeamerfont{subtitle}\insertsubtitle
+	  \end{beamercolorbox}%
+    \vskip0.5cm%
+    \begin{beamercolorbox}[wd=0.6\paperwidth,center, #1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+    \vskip0.5cm%
+    \begin{beamercolorbox}[wd=0.6\paperwidth,center, #1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vskip0.5cm%
+    \begin{beamercolorbox}[wd=0.65\paperwidth, center, #1]{date}
+     \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+    
+    \end{columns}
+  \endgroup
+  \vfill
+}
+
+\makeatletter
+\def\ps@navigation@titlepage{%
+  \setbeamertemplate{footline}{}% no footline for the titlepage 
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+
+\defbeamertemplate*{frametitle}{hfut-BinChen}
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle}
+    \begin{tikzpicture}[remember picture,overlay]
+      %\fill[color=white] (0,0.2) rectangle (current page.north east);
+      % college logo, now we do not use it.
+      %\node [anchor=north east, inner sep=0pt]  at ([xshift = -0.15cm, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{学院徽章.png}}; 
+      % HFUT logo
+      \node [anchor=north east, inner sep=0pt]  at ([xshift = -10pt, yshift=-1pt]current page.north east){\includegraphics[height=.7cm]{images/HFUT_Horizontal_name&badge.pdf}}; 
+
+      % top line
+      \draw[tueScharlaken] ([xshift = 0pt, yshift=-22pt]current page.north west) -- ([xshift = 0pt, yshift=-22pt]current page.north east);
+
+      % frame title
+      \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\Large]  at ([xshift = 10pt, yshift=-5pt]current page.north west){\insertframetitle};
+      \ifx\insertframesubtitle\@empty
+      \else
+        \node [anchor=north west , inner sep=0pt, tuedarkblue, font=\large]  at ([xshift = 10pt, yshift=-25pt]current page.north west){\insertframesubtitle};
+      \fi
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{hfut-BinChen}
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{palette primary} 
+    \begin{tikzpicture}[remember picture,overlay]
+      % bottom line and shape for page number
+      \draw[fill=HFUTred,HFUTred]  ([xshift = 0pt, yshift=0pt]current page.south west) -- ([xshift = 20pt, yshift=0pt]current page.south west) -- ([xshift = 25pt, yshift=15pt]current page.south west) -- ([xshift = 0pt, yshift=15pt]current page.south west) -- cycle;
+
+      \node [anchor=south, inner sep=0pt,white, font=\scriptsize]  at ([xshift = 11pt, yshift=3pt]current page.south west){{\insertframenumber/\inserttotalframenumber}};
+      \node [anchor=west, inner sep=0pt, black, font=\scriptsize\color{black}]  at ([xshift = 30pt, yshift=8pt]current page.south west){{\insertshorttitle}};
+      \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = 160pt, yshift=8pt]current page.south west){{\insertshortauthor}};
+      \node [anchor=west, inner sep=0pt, black, font=\scriptsize]  at ([xshift = -80pt, yshift=8pt]current page.south east){{\insertshortdate}};
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+% no navigation symbols
+\setbeamertemplate{navigation symbols}{}
