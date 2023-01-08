@@ -22,6 +22,7 @@
             ],
             "env": {}
         }
+<<<<<<< HEAD
     ],
 
 // forward and inverse search enable
@@ -61,5 +62,7 @@
     "*.fls",
     "*.log",
     "*.fdb_latexmk",
+=======
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
     ]
 }

@@ -2,6 +2,10 @@
 % !TEX encoding = UTF-8
 
 \documentclass[aspectratio=169]{beamer}
+<<<<<<< HEAD
+=======
+% 默认使用hfut-sx主题，可以自由更换
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 \usetheme{hfut-sx}
 
 \usepackage{amsmath,amsfonts,amssymb}
@@ -10,6 +14,7 @@
 \usepackage{layout}
 \usepackage{minted}
 \usepackage[natbib=true]{biblatex}
+<<<<<<< HEAD
 \addbibresource{example.bib}
 
 \setbeamertemplate{frametitle continuation}[from second]
@@ -19,6 +24,21 @@
 	\begin{frame}{目录}
 		\tableofcontents[currentsection]
 	\end{frame}
+=======
+
+% biblatex 数据库
+\addbibresource{example.bib}
+
+% 幻灯片分页时从第二页开始打印“（续）”
+\setbeamertemplate{frametitle continuation}[from second]
+
+% 每一节开始的时候打印目录
+\AtBeginSection[]
+{
+  \begin{frame}{目录}
+    \tableofcontents[currentsection]
+  \end{frame}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 }
 
 
@@ -53,10 +73,17 @@
 \begin{frame}[fragile]{标题}{和副标题}
 一帧幻灯片的标题可以用如下方式指定：
 \begin{itemize}
+<<<<<<< HEAD
 \item \mintinline{tex}{\begin{frame}{标题}{副标题}}
 	\item \mintinline{tex}{\frametitle{标题}}
 	\item \mintinline{tex}{\framesubtitle{副标题}}
 	\end{itemize}
+=======
+	\item \mintinline{tex}{\begin{frame}{标题}{副标题}}
+	\item \mintinline{tex}{\frametitle{标题}}
+	\item \mintinline{tex}{\framesubtitle{副标题}}
+\end{itemize}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 
 \end{frame}
 
@@ -64,6 +91,7 @@
 \begin{frame}[fragile,allowframebreaks]{主题}
 	\enableindent
 	\Beamer 的主题有很多，我们提供了三套完整的主题。
+<<<<<<< HEAD
 	\begin{itemize}
 		\item \texttt{hfut-CambridgeUS}
 		\item \texttt{hfut-sx}
@@ -83,11 +111,33 @@
 	\end{itemize}
 
 	由于维护者的精力有限，本repo提供的主题并未进行这样的模块化，欢迎提交PR进行修正。
+=======
+\begin{itemize}
+	\item \texttt{hfut-CambridgeUS}
+	\item \texttt{hfut-sx}
+	\item \texttt{hfut-BinChen}
+\end{itemize}
+
+这种完整的主题使用\mintinline{tex}{\usetheme}命令指定。
+
+\framebreak
+
+同时，\Beamer 还有很多模块化的颜色（color）、内部（inner）、外部（outer）和字体（font）主题。一般来说完整的主题由这些模块化的子主题构成。我们可以通过以下指令指定这些主题：
+\begin{itemize}
+	\item[color] \mintinline{tex}{\usecolortheme}
+	\item[inner] \mintinline{tex}{\useinnertheme}
+	\item[outer] \mintinline{tex}{\useoutertheme}
+	\item[font] \mintinline{tex}{\usefonttheme}
+\end{itemize}
+
+由于维护者的精力有限，本repo提供的主题并未进行这样的模块化，欢迎提交PR进行修正。
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 
 \end{frame}
 
 \begin{frame}{Block环境}
 
+<<<<<<< HEAD
 	Block环境是\Beamer{}的一个特色功能，可以用来引导读者视线，突出幻灯片中的重点内容。
 
 	\begin{block}{这是Block的标题}
@@ -105,6 +155,25 @@
 	\begin{example}<3->[Natural Numbers]
 		The set of natural numbers is infinite.
 	\end{example}
+=======
+Block环境是\Beamer{}的一个特色功能，可以用来引导读者视线，突出幻灯片中的重点内容。
+
+\begin{block}{这是Block的标题}
+	这是Block的内容
+\end{block}
+
+\begin{theorem}<1->
+There exists an infinite set.
+\end{theorem}
+
+\begin{proof}<2->
+This follows from the axiom of infinity.
+\end{proof}
+
+\begin{example}<3->[Natural Numbers]
+The set of natural numbers is infinite.
+\end{example}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 
 \end{frame}
 
@@ -117,7 +186,11 @@
 			比如说，\texttt{columns}环境就可以提供多栏的排版格式，这允许你进行左右对照。
 		\end{column}
 		\begin{column}{0.45\textwidth}
+<<<<<<< HEAD
 			\begin{minted}{tex}
+=======
+\begin{minted}{tex}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 \begin{columns}
     \begin{column}{0.45\textwidth}
         % ...
@@ -132,6 +205,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{幻灯片脚注}
+<<<<<<< HEAD
 	\setbeamerfont{footnote}{size=\tiny}
 
 	\begin{itemize}
@@ -143,6 +217,19 @@
 
 \begin{frame}{图片、表格、算法}
 	\enableindent
+=======
+    \setbeamerfont{footnote}{size=\tiny}
+
+\begin{itemize}
+	\item 脚注用\mintinline{tex}{\footnote}命令\footnote{这是一个脚注}。
+	\item 脚注引用用\mintinline{tex}{\footcite}命令\footcite[需要\BibLaTeX{}，下同]{biblatex}。
+	\item 脚注完整引用用\mintinline{tex}{\footfullcite}命令\footfullcite{biblatex}。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{图片、表格、算法}
+\enableindent
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 	这些浮动体环境在\Beamer{}下并无什么不同，我们可以通过正常的方法放置这些环境。但是有时候（特别是算法环境）放置策略需要采用\texttt{[H]}。
 
 	\only<1>{
@@ -154,6 +241,7 @@
 	}
 	\only<2>{
 		\begin{table}
+<<<<<<< HEAD
 			\caption{Table caption}
 			\begin{tabular}{l l l}
 				\toprule
@@ -178,6 +266,32 @@
 				\EndFor
 			\end{algorithmic}
 		\end{algorithm}
+=======
+		\caption{Table caption}
+		\begin{tabular}{l l l}
+		\toprule
+		\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+		\midrule
+		Treatment 1 & 0.0003262 & 0.562 \\
+		Treatment 2 & 0.0015681 & 0.910 \\
+		Treatment 3 & 0.0009271 & 0.296 \\
+		\bottomrule
+		\end{tabular}
+		\end{table}
+	}
+	\only<3>{
+\begin{algorithm}[H]
+\caption{神经网络训练过程}
+\begin{algorithmic}[1]
+\State 初始化网络权值 $\mathcal{W}$
+\For{$t=0 \to max\_train\_steps$}
+\State {\bfseries 输入}一批次$x$以计算$L(t)$
+\State 计算梯度$\nabla_{\mathcal{W}} L(t)$
+\State 使用梯度$\nabla_{\mathcal{W}} L(t)$更新$\mathcal{W}(t) \mapsto \mathcal{W}(t+1)$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 	}
 \end{frame}
 
@@ -198,6 +312,7 @@
 \begin{frame}[fragile]{简单动画}
 	同样的事情也可以用\mintinline{tex}{\uncover}命令做到
 
+<<<<<<< HEAD
 	\begin{semiverbatim}
 		\uncover<1->{\alert<0>{int main (void)}}
 		\uncover<1->{\alert<0>{\{}}
@@ -213,6 +328,23 @@
 		\uncover<1->{\alert<0>{\}}}
 	\end{semiverbatim}
 	\visible<4->{Note the use of \alert{\texttt{std::}}.}
+=======
+\begin{semiverbatim}
+\uncover<1->{\alert<0>{int main (void)}}
+\uncover<1->{\alert<0>{\{}}
+\uncover<1->{\alert<1>{  \alert<4>{std::}vector<bool> is_prime (100, true);}}
+\uncover<1->{\alert<1>{  for (int i = 2; i < 100; i++)}}
+\uncover<2->{\alert<2>{  if (is_prime[i])}}
+\uncover<2->{\alert<0>{  \{}}
+\uncover<3->{\alert<3>{    \alert<4>{std::}cout << i << " ";}}
+\uncover<3->{\alert<3>{    for (int j = i; j < 100;}}
+\uncover<3->{\alert<3>{      is_prime [j] = false, j+=i);}}
+\uncover<2->{\alert<0>{  \}}}
+\uncover<1->{\alert<0>{  return 0;}}
+\uncover<1->{\alert<0>{\}}}
+\end{semiverbatim}
+\visible<4->{Note the use of \alert{\texttt{std::}}.}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 
 \end{frame}
 
@@ -228,7 +360,11 @@
 	\enableindent
 
 	如果帧包含脆性文本（fragile text），在排版帧时将使用不同的内部机制（mechanisms）以确保在帧
+<<<<<<< HEAD
 	内重置字符代码（reset character codes）。此时需要给\texttt{frame}添加\texttt{[fragile]}选项。
+=======
+内重置字符代码（reset character codes）。此时需要给\texttt{frame}添加\texttt{[fragile]}选项。
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 
 	所谓的脆性文本通常包括：
 	\begin{itemize}
@@ -252,17 +388,30 @@
 \end{frame}
 
 \begin{frame}{打印参考文献列表需要特殊处理}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 	参考文献列表通常比较长，一帧幻灯片通常无法满足其空间需求。这时候需要给\texttt{frame}环境添加\texttt{[allowframebreaks]}选项。
 \end{frame}
 
 \begin{frame}[allowframebreaks]
+<<<<<<< HEAD
 	\frametitle{参考书目}
 	{
 		\tiny
 		\nocite{*}
 		\printbibliography[heading=none]
 	}
+=======
+\frametitle{参考书目}
+{
+	\tiny
+	\nocite{*}
+	\printbibliography[heading=none]
+}
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
 \end{frame}
 
 \begin{frame}{HFUTTUG需要你！}
