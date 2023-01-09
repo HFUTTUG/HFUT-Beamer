@@ -64,7 +64,7 @@ InverseSearchCmdLine = "D:\\Microsoft VS Code\\Code.exe" "D:\\Microsoft VS Code\
 EnableTeXEnhancements = true
 ```
 
-Don't forget to reset the paths according to your installation.    [Click Here for More Details](https://github.com/James-Yu/LaTeX-Workshop/wiki)
+Don't forget to reset the paths according to your installation and update your LaTeX workshop to the latest version.    [Click Here for More Details](https://github.com/James-Yu/LaTeX-Workshop/wiki/View#external-pdf-viewer)
 
 =======
 # 合肥工业大学 Beamer 主题集合
