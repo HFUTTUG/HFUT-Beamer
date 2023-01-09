@@ -22,5 +22,47 @@
             ],
             "env": {}
         }
+<<<<<<< HEAD
+    ],
+
+// forward and inverse search enable
+// this function must be cooperated with SumatraPDF's advanced setting
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "E:\\SumatraPDF\\SumatraPDF.exe",  // modify the path by your setting
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.command": "E:\\SumatraPDF\\SumatraPDF.exe",  // modify the path by your setting
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "%PDF%",
+    ],
+
+// clear useless files
+    "latex-workshop.latex.autoClean.run": "onBuilt", // ended with 't', not 'd'
+    "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+=======
+>>>>>>> dddbfc74b97b3014157bd5953cf956d06f7cdb71
     ]
 }
